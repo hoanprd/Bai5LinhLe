@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.375" name="QLXNHHDatabase">
+  <DataContextMoniker Name="/QLXNHHDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b7d09a00-a451-46a9-a2ce-78959550ee09" absoluteBounds="0.75, 3.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/QLXNHHDatabaseDataContext/HangHoa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6fdb0cf-46f9-42c2-b81e-793836c920c8" absoluteBounds="0.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf822a12-8e33-4836-bbf6-fdcf9fc54f69" absoluteBounds="3.5, 3.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/QLXNHHDatabaseDataContext/PhieuXuat_ChiTiet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="beb45ba7-fee1-4907-aa38-92a375e6b5a9" absoluteBounds="3.515, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c523f359-beac-4f7b-a6e5-c1e77bc2474e" absoluteBounds="0.75, 6.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/QLXNHHDatabaseDataContext/PhieuNhap" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80f852b7-90c9-4b2b-8cb6-5f23a349899f" absoluteBounds="0.765, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9023409-b68f-4c43-912f-7dac2298fde7" absoluteBounds="3.5, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/QLXNHHDatabaseDataContext/PhieuNhap_ChiTiet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bf35946-1b57-43fb-b997-f5eb6af11912" absoluteBounds="3.515, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="14d36cff-0f22-4f38-be0f-439d7fbf1088" absoluteBounds="0.75, 8.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/QLXNHHDatabaseDataContext/PhieuXuat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de6a15d9-6269-4a72-ad4a-9f7878cf32e1" absoluteBounds="0.765, 9.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.44314697265625); (3.04166666666667 : 4.44314697265625 : JumpStart); (3.20833333333333 : 4.44314697265625 : JumpEnd); (3.5 : 4.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLXNHHDatabaseDataContext/HangHoa/HangHoa_PhieuXuat_ChiTiet" />
+      <nodes>
+        <classShapeMoniker Id="b7d09a00-a451-46a9-a2ce-78959550ee09" />
+        <classShapeMoniker Id="cf822a12-8e33-4836-bbf6-fdcf9fc54f69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3.75); (1.75 : 1.44314697265625); (3.5 : 1.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLXNHHDatabaseDataContext/HangHoa/HangHoa_PhieuNhap_ChiTiet" />
+      <nodes>
+        <classShapeMoniker Id="b7d09a00-a451-46a9-a2ce-78959550ee09" />
+        <classShapeMoniker Id="a9023409-b68f-4c43-912f-7dac2298fde7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.25091745577925); (3.125 : 5.87591745577925); (3.125 : 1.82097245898437); (3.5 : 1.82097245898437)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLXNHHDatabaseDataContext/PhieuNhap/PhieuNhap_PhieuNhap_ChiTiet" />
+      <nodes>
+        <classShapeMoniker Id="c523f359-beac-4f7b-a6e5-c1e77bc2474e" />
+        <classShapeMoniker Id="a9023409-b68f-4c43-912f-7dac2298fde7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.47199625651042); (4.5 : 9.47199625651042); (4.5 : 5.1362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLXNHHDatabaseDataContext/PhieuXuat/PhieuXuat_PhieuXuat_ChiTiet" />
+      <nodes>
+        <classShapeMoniker Id="14d36cff-0f22-4f38-be0f-439d7fbf1088" />
+        <classShapeMoniker Id="cf822a12-8e33-4836-bbf6-fdcf9fc54f69" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

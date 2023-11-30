@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLXNHH" Class="QLXNHHDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLExpress;Initial Catalog=QLXNHH;Integrated Security=True" SettingsObjectName="QLXuatNhapHangHoa.Properties.Settings" SettingsPropertyName="QLXNHHConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HangHoa" Member="HangHoas">
+    <Type Name="HangHoa">
+      <Column Name="MSHH" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenHH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TonDau" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HangHoa_PhieuXuat_ChiTiet" Member="PhieuXuat_ChiTiets" ThisKey="MSHH" OtherKey="MSHH" Type="PhieuXuat_ChiTiet" />
+      <Association Name="HangHoa_PhieuNhap_ChiTiet" Member="PhieuNhap_ChiTiets" ThisKey="MSHH" OtherKey="MSHH" Type="PhieuNhap_ChiTiet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuXuat_ChiTiet" Member="PhieuXuat_ChiTiets">
+    <Type Name="PhieuXuat_ChiTiet">
+      <Column Name="MSPX" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MSHH" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HangHoa_PhieuXuat_ChiTiet" Member="HangHoa" ThisKey="MSHH" OtherKey="MSHH" Type="HangHoa" IsForeignKey="true" />
+      <Association Name="PhieuXuat_PhieuXuat_ChiTiet" Member="PhieuXuat" ThisKey="MSPX" OtherKey="MSPX" Type="PhieuXuat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuNhap" Member="PhieuNhaps">
+    <Type Name="PhieuNhap">
+      <Column Name="MSPN" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="PhieuNhap_PhieuNhap_ChiTiet" Member="PhieuNhap_ChiTiets" ThisKey="MSPN" OtherKey="MSPN" Type="PhieuNhap_ChiTiet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuNhap_ChiTiet" Member="PhieuNhap_ChiTiets">
+    <Type Name="PhieuNhap_ChiTiet">
+      <Column Name="MSPN" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MSHH" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HangHoa_PhieuNhap_ChiTiet" Member="HangHoa" ThisKey="MSHH" OtherKey="MSHH" Type="HangHoa" IsForeignKey="true" />
+      <Association Name="PhieuNhap_PhieuNhap_ChiTiet" Member="PhieuNhap" ThisKey="MSPN" OtherKey="MSPN" Type="PhieuNhap" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuXuat" Member="PhieuXuats">
+    <Type Name="PhieuXuat">
+      <Column Name="MSPX" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayXuat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="PhieuXuat_PhieuXuat_ChiTiet" Member="PhieuXuat_ChiTiets" ThisKey="MSPX" OtherKey="MSPX" Type="PhieuXuat_ChiTiet" />
+    </Type>
+  </Table>
+</Database>
